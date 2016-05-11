@@ -1,2 +1,2 @@
-# riot-validater
-this is a riot validater
+# riot-validator
+this is a riot validator
