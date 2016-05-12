@@ -1,5 +1,5 @@
 # riot-validator
-this is a riot validator
+this is a riot validator mixin
 ###Install
     npm install riot-validator
 ###Usage
