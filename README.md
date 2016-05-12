@@ -1,7 +1,16 @@
 # riot-validator
 this is a riot validator
 ###Install
+    npm install riot-validator
 ###Usage
+    <test>
+        <div>...</div>
+        <script>
+            this.mixin('form');
+            this.useForm();
+            //...
+        </script>
+    </test>
 ###Validators
 ####Built-in validators
 
@@ -16,5 +25,15 @@ this is a riot validator
     max (for type="number")
 
 ####Associated state classes
+.f-invalid .f-valid
+    
+when error:
+    
+.f-invalid-required .f-invalid-max  ...
 ####Custom validator
-
+    registerValidators({
+        name: 'custom-validator',
+        fn: function(){
+            return ...
+        }
+    })
