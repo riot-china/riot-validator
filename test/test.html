@@ -1,0 +1,66 @@
+<test>
+    <form name="111">
+        <div>
+            <input oninput="{onInput}" class="v" type="number" required value="111" name="requiredInput1"/>
+            <span if="{forms['111'].requiredInput1.$error.required}">
+                所填字段非空
+            </span>
+        </div>
+        <br/>
+        <div>
+            <input class="v" type="number" required min="100" max="200" value="" name="minInput1"/>
+            <span if="{forms['111'].minInput1.$error.required}">
+                所填字段非空
+            </span>
+            <span if="{forms['111'].minInput1.$error.min}">
+                所填数字需大于100
+            </span>
+            <span if="{forms['111'].minInput1.$error.max}">
+                所填数字需小于200
+            </span>
+        </div>
+        <br/>
+        <div>
+            <input class="v" type="text" required minlength="5" value="" name="minlengthInput1"/>
+            <span if="{forms['111'].minlengthInput1.$error.minlength}">
+                最小输入5位数
+            </span>
+        </div>
+        <br/>
+        <div>
+            <input class="v" type="text" required maxlength="10" value="" name="maxlengthInput1"/>
+            <span if="{forms['111'].maxlengthInput1.$error.maxlength}">
+                最大输入10位数
+            </span>
+        </div>
+        <br/>
+        <div>
+            <input class="v" type="text" required pattern="111" name="patternInput1"/>
+            <span if="{forms['111'].patternInput1.$error.pattern}">
+                模式匹配错误: \{111\}
+            </span>
+        </div>
+        <br/>
+    </form>
+
+    <style>
+        .f-invalid{
+            border: 1px solid red;
+        }
+        .f-valid{
+            border: 1px solid green;
+        }
+    </style>
+    <script>
+        var self = this;
+        this.mixin('form');
+        this.useForm();
+        this.on('mount', function(){
+
+        })
+        self.onInput = function(){
+            console.log("====")
+        }
+
+    </script>
+</test>

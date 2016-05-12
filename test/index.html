@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>test</title>
+    <script src="../node_modules/riot/riot+compiler.js"></script>
+    <script src="../lib/validator-compiled.js"></script>
 </head>
 <body>
-
+    <test></test>
+    <script src="./test.html" type="riot/tag"></script>
+    <script>
+        riot.compile(function(){
+            riot.mount('*');
+        });
+        riot.mixin('form', form);
+    </script>
 </body>
 </html>
