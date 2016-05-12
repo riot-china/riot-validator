@@ -41,11 +41,18 @@
             </span>
         </div>
         <br/>
+        <input disabled="{!forms['111'].$ok()}" type="submit" value="{forms['111'].$ok()}"/>
     </form>
 
     <style>
         .f-invalid{
             border: 1px solid red;
+        }
+        .f-invalid-required{
+            background-color: red;
+        }
+        .f-invalid-min{
+            background-color: green;
         }
         .f-valid{
             border: 1px solid green;
@@ -56,10 +63,14 @@
         this.mixin('form');
         this.useForm();
         this.on('mount', function(){
-
+            console.log(self.forms['111']);
         })
         self.onInput = function(){
-            console.log("====")
+            console.log(self.forms['111'].requiredInput1.$invalid);
+            if(self.forms['111'].requiredInput1.$invalid){
+                return;
+            }
+            console.log("####")
         }
 
     </script>
