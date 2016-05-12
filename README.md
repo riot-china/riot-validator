@@ -4,7 +4,9 @@ this is a riot validator mixin
     npm install riot-validator
 ###Usage
     <test>
-        <div>...</div>
+        <form name="my_form">
+            <input required/>
+        </form>
         <script>
             this.mixin('form');
             this.useForm();
