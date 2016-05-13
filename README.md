@@ -1,7 +1,9 @@
 # riot-validator
 this is a riot validator mixin
+
 ###Install
     npm install riot-validator
+
 ###Usage
     <test>
         <form name="my_form">
@@ -13,7 +15,9 @@ this is a riot validator mixin
             //...
         </script>
     </test>
+
 ###Validators
+
 ####Built-in validators
 
     type="email"
@@ -27,12 +31,15 @@ this is a riot validator mixin
     max (for type="number")
 
 ####Associated state classes
+
 .f-invalid .f-valid
     
 when error:
     
 .f-invalid-required .f-invalid-max  ...
+
 ####Custom validator
+
     registerValidators({
         name: 'custom-validator',
         fn: function(){

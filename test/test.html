@@ -35,13 +35,13 @@
         </div>
         <br/>
         <div>
-            <input class="v" type="text" required pattern="111" name="patternInput1"/>
+            <input class="v" type="text" pattern="111" name="patternInput1"/>
             <span if="{forms['111'].patternInput1.$error.pattern}">
                 模式匹配错误: \{111\}
             </span>
         </div>
         <br/>
-        <input disabled="{!forms['111'].$ok()}" type="submit" value="{forms['111'].$ok()}"/>
+        <input onclick="{onSubmit}" disabled="{!forms['111'].$dirty || !forms['111'].$ok()}" type="submit" value="{forms['111'].$dirty && forms['111'].$ok()}"/>
     </form>
 
     <style>
@@ -57,6 +57,10 @@
         .f-valid{
             border: 1px solid green;
         }
+        .f-dirty{
+            border: 1px solid yellow !important;
+            background: yellow;
+        }
     </style>
     <script>
         var self = this;
@@ -65,12 +69,11 @@
         this.on('mount', function(){
             console.log(self.forms['111']);
         })
-        self.onInput = function(){
-            console.log(self.forms['111'].requiredInput1.$invalid);
-            if(self.forms['111'].requiredInput1.$invalid){
+        this.onSubmit =function(){
+            if(!this.forms['111'].$validate()){
                 return;
             }
-            console.log("####")
+            console.log("@@@@@@@!#@!#@!#@!#!@!")
         }
 
     </script>
