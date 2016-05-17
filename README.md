@@ -32,7 +32,7 @@ this is a riot validator mixin
 
 ####Associated state classes
 
-.f-invalid .f-valid
+.f-invalid .f-valid .f-dirty .f-pristine 
     
 when error:
     
